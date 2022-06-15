@@ -1,8 +1,8 @@
 import requests
 import json
-# import get_key
-#:
-# get_key.run()
+import get_key
+
+get_key.run()
 f = open("city.json","r")
 j = open("forcast.json","w")
 
