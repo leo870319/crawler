@@ -1,45 +1,35 @@
 import requests
 import json
 
-#generate city list
+
+# generate city list
 def run():
-    j = open('CityCountyData.json','r')
+    j = open("CityCountyData.json", "r")
     data = json.load(j)
     list = []
     for x in data:
-        list.append(x['CityEngName'])
-    
-    
-    
-    #get city key
-    	
+        list.append(x["CityEngName"])
+
+    # get city key
+
     apikey = "pjskPH6AJ2U3RwgBk6cPGF0AMl2tiybh"
-    
+    url = "http://dataservice.accuweather.com/locations/v1/TW/search"
+
     citykey = []
-    f = open('city.json','w')
+    f = open("city.json", "w")
     for x in list:
-        query = {
-            'apikey':apikey,
-            'q': x,
-            'details':'yes'}
-        
-        q = requests.get("http://dataservice.accuweather.com/locations/v1/TW/search", params = query )
+        query = {"apikey": apikey, "q": x, "details": "yes"}
+
+        q = requests.get(url, params=query)
         data = q.json()
         try:
-            citykey.append({'name':x,'key':data[0]["Key"]})
+            citykey.append({"name": x, "key": data[0]["Key"]})
         except:
-            citykey.append({'name':x, 'key':""})
-    
+            citykey.append({"name": x, "key": ""})
+
     f.write(json.dumps(citykey))
-    
+
     f.close()
-
-
-
-
-
-
-
 
 
 #
