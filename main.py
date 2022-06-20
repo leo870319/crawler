@@ -6,7 +6,7 @@ import json
 # get_key.run()
 f = open("city.json", "r")
 j = open("forcast.json", "w")
-print("123")
+
 cities = json.load(f)
 apikey = "pjskPH6AJ2U3RwgBk6cPGF0AMl2tiybh"
 
