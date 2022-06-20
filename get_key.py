@@ -6,18 +6,11 @@ import json
 def run():
     j = open("CityCountyData.json", "r")
     data = json.load(j)
-    lskfjlgkje
-    fkeflekjfekj
-
-    fjefjelkfjej
-
     list = []
     for x in data:
         list.append(x["CityEngName"])
 
-   jflekjfelkjf
-   jflekjflek
-   # get city key
+    # get city key
 
     apikey = "pjskPH6AJ2U3RwgBk6cPGF0AMl2tiybh"
     url = "http://dataservice.accuweather.com/locations/v1/TW/search"
