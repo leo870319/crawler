@@ -19,4 +19,4 @@ jobs:
            author_name: ${{github.run_id}}
            author_email: 8703199@gmail.com
            message: 'append weather info'
-           add: 'forcast.json'
+           add: 'forecast.json'
