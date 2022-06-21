@@ -13,10 +13,14 @@ jobs:
            python -m pip install --upgrade pip
            pip3 install -r requirements.txt
            python3 main.py > log.txt 2>&1 
-       - name: Commit changes
-         uses: EndBug/add-and-commit@v8
+
+       - name: Commit files
+         run: |
+           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+           git config --local user.name "github-actions[bot]"
+           git commit -m "Add changes" -a
+       - name: Push changes
+         uses: ad-m/github-push-action@master
          with:
-           author_name: ${{github.run_id}}
-           author_email: 8703199@gmail.com
-           message: 'append weather info'
-           add: 'forecast.json'
+           github_token: ${{ secrets.GITHUB_TOKEN }}
+           branch: ${{ github.ref }}
