@@ -13,3 +13,10 @@ jobs:
            python -m pip install --upgrade pip
            pip3 install -r requirements.txt
            python3 main.py > log.txt 2>&1 
+       - name: Commit changes
+         uses: EndBug/add-and-commit@v8
+         with:
+           author_name: ${{github.run_id}}
+           author_email: 8703199@gmail.com
+           message: 'append weather info'
+           add: 'forcast.json'

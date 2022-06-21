@@ -4,7 +4,7 @@ import json
 # import get_key
 #
 # get_key.run()
-f = open("city.json", "r")
+f = open("forcast.json", "r")
 j = open("forcast.json", "w")
 
 cities = json.load(f)
@@ -18,7 +18,7 @@ for x in cities:
     )
     content = q.json()
     print(content)
-    x["forecast"] = content
+    x["forecast"] += content
 
 data = json.dumps(cities)
 
