@@ -998,15 +998,6 @@
     ]
   },
   {
-    "name": "Diauyutai",
-    "key": "",
-    "forecast": {
-      "Code": "Unauthorized",
-      "Message": "Api Authorization failed",
-      "Reference": "/forecasts/v1/hourly/12hour/?apikey=pjskPH6AJ2U3RwgBk6cPGF0AMl2tiybh"
-    }
-  },
-  {
     "name": "Hsinchu City",
     "key": "313567",
     "forecast": [
