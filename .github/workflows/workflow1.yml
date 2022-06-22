@@ -1,6 +1,7 @@
 name: run crawler
-on: [push, pull_request]
-
+on:
+  schedule:
+    - cron:  '0 12,23 * * *'
 jobs:
    job1:
      name: this is the only job.
@@ -13,7 +14,6 @@ jobs:
            python -m pip install --upgrade pip
            pip3 install -r requirements.txt
            python3 main.py > log.txt 2>&1 
-
        - name: Commit files
          run: |
            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
